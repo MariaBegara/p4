@@ -3,8 +3,8 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width">
-      <title>Guía de Bruselas</title>
-      <meta name="theme-color" content="#09f">
+      <title>Mi guía de Bruselas</title>
+      <meta name="theme-color" content="#444444">
       <link rel="icon" type="image/jpg" href="/images/icono.jpg">
       <link rel="stylesheet" href="styles.css">
 
@@ -12,84 +12,86 @@
       <script>/* Tema 5: JavaScript */</script>
   </head>
   <body>
-      <header class="mainTitle">
-          <!--AÑADIR NAVEGACIÓN A LAS OTRAS PÁGINAS CREADAS-->
-          <h1>Guía turística de Bruselas</h1>
-          <nav> <!--Navegar en la misma página-->
-            <a href="#inicio">Inicio</a>
-            <a href="#lugares">Lugares turísticos</a>
-            <a href="#comida">Gastronomía</a>
-            <a href="#consejos">Consejos </a>
-            <a href="#transporte">Transporte</a>
-            <a href="#formulario">Sugerencias</a>
+      <header class="cabecera">
+        <nav> <!--Navegar a otras páginas-->
+          <a href="index.html">Inicio</a>
+          <a href="guia.html">Guía para estudiantes</a>
+          <a href="lugares.html">¿Qué visitar?</a>
+          <a href="comida.html">¿Qué (y dónde) comer?</a>
+          <a href="transporte.html">¿Cómo desplazarse?</a>
+          <a href="consejos.html">Otros consejos</a>
+          <a href="sugerencias.html">Segerencias</a>
         </nav>
+          <h1>Guía turística de Bruselas</h1>
       </header>
 
       <main>
-          <section id="inicio">
-              <h2>Descubre Bruselas</h2>
-              <p><strong>¡Bienvenid@ a esta guía de turismo de Bruselas!</strong></p>
-              <p> He decidido hacer esta guía porque el curso que viene pasaré un año estudiando y trabajando en Bélgica. Si planeas visitar pronto Bruselas o te interesa conocer más sobre esta fascinante ciudad, ¡<strong>acompáñame</strong> en este apasionante viaje!</p>
-              <img src="bruselas.jpg" alt="Vista de Bruselas" width="100%">
-          </section>
-
-          <section id="lugares">
-              <h2>Lugares turísticos</h2>
-              <p>Bruselas es una ciudad llena de historia y cultura. Algunos de los lugares más emblemáticos que no te puedes perder son:</p>
+        <article class="contenido">
+            <h2>Descubre Bruselas</h2>
+            <p><strong>¡Bienvenid@ a esta guía de turismo de Bruselas!</strong></p>
+            <p> He decidido hacer esta guía porque el curso que viene pasaré un año estudiando y trabajando en Bélgica. Si planeas <strong>visitar pronto Bruselas</strong> o <strong>te interesa conocer más</strong> sobre esta fascinante ciudad, <strong>¡estás en el sitio correcto!</strong></p>
+            <p> Si vas a ser estudiante, como yo, te recomiendo que le eches un vistazo a la sección <a href="guia.html">Guía para estudiantes</a>.</p>
+            <h2> ¿Por dónde empiezo?</h2>
+            <p> Hay mucho de lo que hablar, pero <strong>empecemos por lo imprescindible</strong>:</p>
+            <nav> <!--Navegar en la misma página-->
               <ul>
-                  <li>La Grand Place</li>
-                  <li>El Atomium</li>
-                  <li>El Manneken Pis</li>
-              </ul>
-          </section>
+                <li><a href="#lugares">Lugares turísticos</a></li>
+                <li><a href="#comida">Gastronomía</a></li>
+                <li><a href="#transporte">Transporte</a></li>
+                <li><a href="#consejos">Consejos </a></li>
+                <li><a href="#formulario">Sugerencias</a></li>
+            </nav>
+            <img src="bruselas.jpg" alt="Vista desde el aire de Bruselas" width="100%">
+        </article>
 
-          <section id="comida">
-              <h2>Gastronomía</h2>
-              <p>La comida belga es conocida por sus deliciosos chocolates, gofres y cervezas. Algunos platos típicos que debes probar son:</p>
-              <ul>
-                  <li>Los mejillones con patatas fritas</li>
-                  <li>El estofado de carne flamenco</li>
-                  <li>Los gofres de Bruselas</li>
-              </ul>
-          </section>
-
-          <section id="consejos">
-              <h2>Consejos y transporte</h2>
-              <p>Para moverte por Bruselas, te recomendamos utilizar el transporte público, que es rápido y eficiente. Algunos consejos útiles para tu visita son:</p>
-              <ul>
-                  <li>Llevar ropa de abrigo, ya que el clima en Bruselas es frío y húmedo</li>
-                  <li>Probar la cerveza belga, que es una de las mejores del mundo</li>
-                  <li>Visitar el Museo del Cómic, que es una de las atracciones más populares de la ciudad</li>
-              </ul>
-          </section>
-
-          <section id="formulario">
-              <h2>¿Tienes alguna sugerencia?</h2>
-
-      </section>
-      </main>
-
-      <nav> <!--Navegar en la misma página-->
-          <a href="index.html">Inicio</a>
-          <a href="lugares.html">Lugares turísticos</a>
-          <a href="comida.html">Gastronomía</a>
-          <a href="consejos.html">Consejos y transporte</a>
-      </nav>
-
-      <article class="contenido">
-          <h2>Descubre Bruselas</h2>
-          <p>Bienvenido a esta guía de turismo de Bruselas. Aquí encontrarás información sobre los mejores lugares para visitar, la comida típica belga y consejos útiles para moverte por la ciudad.</p>
-          <img src="bruselas.jpg" alt="Vista de Bruselas" width="100%">
-      </article>
-
-      <aside class="secciones">
-          <h3>Secciones de la guía</h3>
+        <section id="lugares">
+          <h3>Lugares para visitar</h3>
+          <p>Bruselas es una ciudad llena de historia y cultura. Algunos de los lugares más emblemáticos que no te puedes perder son:</p>
           <ul>
-              <li><a href="lugares.html">Lugares turísticos</a></li>
-              <li><a href="comida.html">Gastronomía</a></li>
-              <li><a href="consejos.html">Consejos y transporte</a></li>
+            <li>La Grand Place</li>
+            <li>El Atomium</li>
+            <li>El Manneken Pis</li>
           </ul>
-      </aside>
+          <p> Para conocer más sobre estos y otros lugares a visitar, dirígete a la sección: <a href="lugares.html">¿Qué visitar?</a></p>
+        </section>
+
+        <section id="comida">
+          <h3>Gastronomía</h3>
+          <p>La comida belga es conocida por sus deliciosos chocolates, gofres y cervezas. Algunos platos típicos que debes probar son:</p>
+          <ul>
+            <li>Los mejillones con patatas fritas</li>
+            <li>El estofado de carne flamenco</li>
+            <li>Los gofres</li>
+          </ul>
+          <p> Para conocer más sobre qué comer y dónde comer, tenemos preparada esta sección: <a href="lugares.html">¿Qué (y dónde) comer?</a></p>
+        </section>
+
+        <section id="transporte">
+          <h3>Transporte</h3>
+          <p>Para moverte por Bruselas, te recomendamos utilizar el transporte público, que es rápido y eficiente. Sin embargo, ¡tienes muchas otras opciones!</p>
+          <ul>
+            <li>Metro y autobús</li>
+            <li>Bicicleta</li>
+            <li>Carsharing</li>
+          </ul>
+          <p> Para poder comparar precios y ver todas las opciones que hay en la ciudad, haz click en el siguiente enlace: <a href="transporte.html">¿Cómo desplazarse?</a></p>
+        </section>
+
+        <section id="consejos">
+          <h3>Consejos</h3>
+          <p>A continuación, te contamos algunos consejos útiles cuando viajes a Bruselas, tanto si planeas quedarte unos días como si te quedas una temporada (como yo).</p>
+          <ul>
+            <li>Llevar ropa de abrigo, ya que el clima en Bruselas es frío y húmedo</li>
+            <li>Probar la cerveza belga, que es una de las mejores del mundo</li>
+            <li>Visitar el Museo del Cómic, que es una de las atracciones más populares de la ciudad</li>
+          </ul>
+        </section>
+
+        <section id="formulario">
+          <h3>¿Tienes alguna sugerencia?</h3>
+          <p>Si has estado en Bruselas y quieres hacernos llegar alguna recomendación o experiencia que pueda ser interesante, ¡no dudes en escribirnos! Rellena este <a href="sugerencias.html">formulario</a> con todo lo que nos quieras contar.</p>
+        </section>
+      </main>
 
       <footer class="pie">
           Guía de Bruselas - Creado por María Begara
