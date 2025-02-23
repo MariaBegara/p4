@@ -95,13 +95,18 @@ th {
     text-transform: uppercase;
 }
 caption {
-    font-size: 18px;         /* Tamaño de fuente */
-    font-weight: bold;       /* Texto en negrita */
-    color: #333;            /* Color del texto */
-    text-align: center;      /* Centrar el texto */
+    font-size: 18px;      
+    font-weight: bold;     
+    color: #333;      
+    text-align: center;   
     padding: 10px;
-    background-color: #f8f8f8; /* Fondo para destacar el título */
+    background-color: #f8f8f8; /* Fondo del título */
     border-bottom: 1px solid #f8f8f8; /* Línea de separacióna */
+}
+.lugares-turisticos{
+    font-size: 17px;
+    margin-top: 18px;
+    margin-bottom: 20px;
 }
 
 /* Imágenes */
@@ -118,15 +123,23 @@ img:hover {
 
 
 .imagen-tabla {
-    max-width: 60%;
+    max-width: 70%;
     height: auto;
     display: block;
     margin: auto;  /* Centra la imagen dentro de la celda */
 }
 
 
-.video-youtube {
+#main-video {
     width: 100%;
+    max-width: none;
+}
+
+#main-video #video-youtube {
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: auto;
     aspect-ratio: 16/9;
 }
 
@@ -145,6 +158,12 @@ input, textarea, select {
     border-radius: 5px;
     font-size: 16px;
 }
+.datos-separados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
 
 button {
     background-color: #1e86b0;
