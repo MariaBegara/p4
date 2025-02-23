@@ -73,17 +73,40 @@
                 </tr>
             </tbody>
         </table>
-        <br></br>
+
+        
+        <details>
+            <summary> Alquiler de coches </summary>
+            <p> Otro medio de transporte que también puedes considerar si vas a moverte por ciudades próximas es el coche. Te mostramos algunas de las opciones que tienes. </p>
+            <div class="buscador">
+                <label for="precio-coche"> Filtrar por precio máximo por día (€/día): </label>
+                <input type="number" id="precio-coche" placeholder="Ej: 90">
+                <button id = "buscar-coche"> Buscar </button>
+            </div>
+
+            <div id="coches-contenedor"></div> <!-- Mostrar los anuncios de coches aquí -->
+        </details>
+        <details>
+            <summary> Alquiler de motos </summary>
+            <p> otra opción también es alquilar una moto. </p>
+            <div class="buscador">
+                <label for="precio-moto"> Filtrar por precio máximo por día (€/día): </label>
+                <input type="number" id="precio-moto" placeholder="Ej: 50">
+                <button id = "buscar-moto"> Buscar </button>
+            </div>
+
+            <div id="motos-contenedor"></div> <!-- Mostrar los anuncios de bicicletas aquí -->
+        </details>
         <details>
             <summary> Alquiler de bicicletas </summary>
             <p> La bicicleta es uno de los medios de tranporte más usados en Bruselas pero, ¿cuáles son las mejores para alquilar? </p>
             <div class="buscador">
-                <label for="precio-max"> Filtrar por precio máximo (€): </label>
-                <input type="number" id="precio-max" placeholder="Ej: 50">
-                <button id = "buscar-precio"> Buscar </button>
+                <label for="precio-bici"> Filtrar por precio máximo (€): </label>
+                <input type="number" id="precio-bici" placeholder="Ej: 7">
+                <button id = "buscar-bici"> Buscar </button>
             </div>
 
-            <div id="bicis-contenedor"></div> <!-- Mostrar los anuncios aquí -->
+            <div id="bicis-contenedor"></div> <!-- Mostrar los anuncios de bicicletas aquí -->
         </details>
         <details>
             <summary> Comprobar horarios de los trenes </summary>

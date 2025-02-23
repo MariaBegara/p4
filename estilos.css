@@ -206,7 +206,7 @@ summary {
 
 /* Añadido para la práctica 3 */
 /*Estilos de alquileres de bicis y consejos - DUMMYJSON*/
-#bicis-contenedor, #consejos-contenedor {
+#coches-contenedor, #consejos-contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -214,7 +214,7 @@ summary {
     margin-top: 20px;
 }
 
-.bici, .consejo {
+.coche, .consejo {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
@@ -222,9 +222,12 @@ summary {
     max-width: 250px;
     text-align: center;
 }
+.coche:hover {
+    transform: scale(1.05);
+}
 
 
-.bici .precio {
+.coche .precio {
     font-weight: bold;
     color: #1e86b0;
     font-size: 16px;

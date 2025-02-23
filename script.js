@@ -33,52 +33,51 @@
         // Actualizar los consejos cuando se haga clic en el botón
         botonActualizar.addEventListener("click", obtenerConsejos);
     });
-    
-    
 
 
-    // DUMMYJSON -> anuncios (simulando que son empresas de alquiler de bicicletas)
+
+    // DUMMYJSON -> anuncios de alquiler de coches
     document.addEventListener("DOMContentLoaded", function () {
-        const contenedorBicis = document.getElementById("bicis-contenedor");
-        const precioInput = document.getElementById("precio-max");
-        const filtrarBtn = document.getElementById("buscar-precio");
-    
-        let bicicletas = [];
-    
-        // Se realiza la petición HTTP GET al servidor
-        fetch("https://dummyjson.com/products?limit=10") // URL de la API
+        const contenedorCoches = document.getElementById("coches-contenedor");
+        const precioInput = document.getElementById("precio-coche");
+        const filtrarBtn = document.getElementById("busca-coche");
+
+        let coches = [];
+
+        // Se realiza la petición HTTP GET al servidor - categoría vehículos
+        fetch("https://dummyjson.com/products/category/vehicle?limit=3") // URL de la API
             .then(response => response.json()) // Convertimos la respuesta a JSON
             .then(data => {
-                bicicletas = data.products; // Guardamos los productos obtenidos
-                mostrarBicis(bicicletas);
+                coches = data.products; // Guardamos los productos obtenidos
+                mostrarCoches(coches);
             })
             .catch(error => console.error("Error al obtener los datos:", error));
-    
-        // Función para actualizar la interfaz con las bicicletas obtenidas
-        function mostrarBicis(lista) {
-            contenedorBicis.innerHTML = "";
+
+        // Función para actualizar los coches
+        function mostrarCoches(lista) {
+            contenedorCoches.innerHTML = "";
             if (lista.length === 0) {
-                contenedorBicis.innerHTML = "<p>No hay bicicletas en este rango de precio.</p>";
+                contenedorCoches.innerHTML = "<p>No hay coches en este rango de precio.</p>";
                 return;
             }
-            lista.forEach(bici => {
-                // Crear un div para cada bicicleta
-                const biciElemento = document.createElement("div");
-                biciElemento.classList.add("bici");
-    
-                // Insertar los datos en el HTML
-                biciElemento.innerHTML = `
-                    <img src="${bici.thumbnail}" alt="${bici.title}">
-                    <h3 id="title">${bici.title}</h3>
-                    <p id="description">${bici.description}</p>
-                    <p id="price" class="precio">Precio: ${bici.price}€</p>
+            lista.forEach(coche => {
+                // Crear un div para cada coche
+                const cocheElemento = document.createElement("div");
+                cocheElemento.classList.add("coche");
+
+                // Insertar los datos en el HTML 
+                cocheElemento.innerHTML = `
+                    <img src="${coche.thumbnail}" alt="${coche.title}">
+                    <h3 id="title">${coche.title}</h3>
+                    <p id="description">${coche.description}</p>
+                    <p id="price" class="precio">Precio: ${(coche.price /500).toFixed(2)}€</p>
                 `;
-    
+
                 // Añadir el elemento al contenedor
-                contenedorBicis.appendChild(biciElemento);
+                contenedorCoches.appendChild(cocheElemento);
             });
         }
-    
+
         // Evento para filtrar por precio
         filtrarBtn.addEventListener("click", function () {
             const precioMaximo = parseFloat(precioInput.value); // Obtener el valor del input
@@ -86,24 +85,44 @@
                 alert("Por favor, introduce un precio válido.");
                 return;
             }
-    
-            // Filtrar bicicletas cuyo precio sea menor o igual que el que ha metdo el usuario
-            const bicisFiltradas = bicicletas.filter(
-                bici => bici.price <= precioMaximo
+
+            // Filtrar coches que su precio sea menor o igual que elintroducido por el usuario
+            const cochesFiltrados = coches.filter(
+                coche => coche.price <= precioMaximo
             );
-            mostrarBicis(bicisFiltradas);
+            mostrarCoches(cochesFiltrados);
         });
     });
+  
+    
+    
 
 
+    // API de bicis - https://api.citybik.es/v2/ -> siguiente implementación
     // API de trenes - https://docs.irail.be/ -> siguiente implementación
     document.addEventListener("DOMContentLoaded", function () {
+         // Mensaje para la búsqueda de bicicletas
+        const buscarBicisBtn = document.getElementById("buscar-bici");
+        const bicisContenedor = document.getElementById("bicis-contenedor");
         const buscarTrenesBtn = document.getElementById("buscar-trenes");
-        const trenesContenedor = document.getElementById("trenes-contenedor"); // Asegúrate de que este ID exista en tu HTML
+        const trenesContenedor = document.getElementById("trenes-contenedor");
+        const buscarMotosBtn = document.getElementById("buscar-motos");
+        const motosContenedor = document.getElementById("motos-contenedor");
+
+        buscarBicisBtn.addEventListener("click", function () {
+            bicisContenedor.innerHTML = `<p>Esta función se implementará próximamente.</p>`
+        });
 
         buscarTrenesBtn.addEventListener("click", function () {
-            trenesContenedor.innerHTML = `<p>Esta función se implementará próximamente.</p>`; 
+            trenesContenedor.innerHTML = `<p>Esta función se implementará próximamente.</p>`
+        });
+
+        buscarMotosBtn.addEventListener("click", function () {
+            motosContenedor.innerHTML = `<p>Esta función se implementará próximamente.</p>`
         });
     });
+
+    
+    
 
     
