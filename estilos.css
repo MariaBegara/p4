@@ -94,6 +94,15 @@ th {
     color: white;
     text-transform: uppercase;
 }
+caption {
+    font-size: 18px;         /* Tamaño de fuente */
+    font-weight: bold;       /* Texto en negrita */
+    color: #333;            /* Color del texto */
+    text-align: center;      /* Centrar el texto */
+    padding: 10px;
+    background-color: #f8f8f8; /* Fondo para destacar el título */
+    border-bottom: 1px solid #f8f8f8; /* Línea de separacióna */
+}
 
 /* Imágenes */
 img {
@@ -109,7 +118,7 @@ img:hover {
 
 
 .imagen-tabla {
-    max-width: 80%;
+    max-width: 60%;
     height: auto;
     display: block;
     margin: auto;  /* Centra la imagen dentro de la celda */
