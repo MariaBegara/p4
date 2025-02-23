@@ -7,9 +7,7 @@
       <meta name="theme-color" content="#444444">
       <link rel="icon" type="image/jpg" href="/images/icono.jpg">
       <link rel="stylesheet" href="estilos.css">
-
-      <style>/* Tema 4: CSS */</style>
-      <script>/* Tema 5: JavaScript */</script>
+      <script src="./script.js"></script>
   </head>
 
 
@@ -28,7 +26,7 @@
             <h1>Sugerencias a tener en cuenta si viajas a Bruselas</h1>
         </header>
 
-    +  <main>
+        <main>
         <form action="formularioenviado.html" method="post" role="form"> <!-- Formulario enviado correctamente, se abre una nueva pantalla -->
             <!-- Primer fieldset: Datos personales -->
             <fieldset>
@@ -69,8 +67,8 @@
                     <input 
                         type="tel" 
                         name="telefono" 
-                        pattern="[0-9]{11}"
-                        placeholder="444 444 444"> <!-- Solo aceptará números con 9 digitos + espacios) -->
+                        pattern="[0-9]{9}"
+                        placeholder="444444444"> <!-- Solo aceptará números con 9 digitos + espacios) -->
                 </label>
 
 

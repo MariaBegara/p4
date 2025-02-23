@@ -1,11 +1,15 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #222;
 }
+
 
 /* Contenedor principal */
 main {
@@ -45,13 +49,13 @@ h1 {
 
 /* Enlaces */
 a {
-    color: #ff6600;
+    color: #3e9815;
     text-decoration: none;
     transition: color 0.3s;
     text-decoration: underline;
 }
 a:hover {
-    color: #ff6600;
+    color: #3e9815ab;
 }
 
 /* Secciones */
@@ -86,7 +90,7 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #ff6600;
+    background-color: #3e9815;
     color: white;
     text-transform: uppercase;
 }
@@ -98,9 +102,16 @@ img {
     border-radius: 5px;
     transition: transform 0.3s;
 }
+
 img:hover {
     transform: scale(1.05);
 }
+
+.video-youtube {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
 
 /* Formulario */
 form {
@@ -118,21 +129,21 @@ input, textarea, select {
 }
 
 button {
-    background-color: #ff6600;
+    background-color: #3e9815;
     color: white;
     border: none;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #cc5500;
+    background-color: #3e9815ab;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
+    background-color: #525050;
     color: white;
     text-align: center;
     padding: 20px;
