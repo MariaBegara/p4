@@ -1,5 +1,5 @@
 /* Estilos generales */
-body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ main {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    flex: 1;
+    flex: 1; /* Toma todo el espacio disponible */
 }
 
 
