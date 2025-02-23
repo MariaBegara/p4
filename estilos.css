@@ -150,27 +150,6 @@ img:hover {
 }
 
 
-/* Formulario */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: auto;
-}
-input, textarea, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.datos-separados {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre los elementos */
-}
-
-
 button {
     background-color: #1e86b0;
     color: white;
@@ -204,9 +183,38 @@ summary {
 }
 
 
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.datos-separados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilo de las cajas cuando el usuario está escribiendo */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 6px #157196;
+    border: 2px solid #1e86b0;
+    outline: none;
+}
+
+
+
 /* Añadido para la práctica 3 */
 /*Estilos de alquileres de bicis y consejos - DUMMYJSON*/
-#coches-contenedor, #consejos-contenedor {
+#coches-contenedor, #motos-contenedor, #consejos-contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -214,7 +222,7 @@ summary {
     margin-top: 20px;
 }
 
-.coche, .consejo {
+.coche, .moto, .consejo {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
@@ -222,12 +230,12 @@ summary {
     max-width: 250px;
     text-align: center;
 }
-.coche:hover {
+.coche:hover, .moto:hover {
     transform: scale(1.05);
 }
 
 
-.coche .precio {
+.coche .precio, .moto .precio {
     font-weight: bold;
     color: #1e86b0;
     font-size: 16px;
@@ -246,4 +254,9 @@ summary {
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
+}
+
+.error {
+    display: none;
+    color: red;
 }
