@@ -73,6 +73,30 @@
                 </tr>
             </tbody>
         </table>
+        <br></br>
+        <details>
+            <summary> Alquiler de bicicletas </summary>
+            <p> La bicicleta es uno de los medios de tranporte más usados en Bruselas pero, ¿cuáles son las mejores para alquilar? </p>
+            <div class="buscador">
+                <label for="precio-max"> Filtrar por precio máximo (€): </label>
+                <input type="number" id="precio-max" placeholder="Ej: 50">
+                <button id = "buscar-precio"> Buscar </button>
+            </div>
+
+            <div id="bicis-contenedor"></div> <!-- Mostrar los anuncios aquí -->
+        </details>
+        <details>
+            <summary> Comprobar horarios de los trenes </summary>
+            <p> Si quieres realizar una excursión a otra ciudad, introduce la fecha y comprueba los horarios de los trenes desde Bruselas. </p>
+            <div class="buscador">
+                <label for="fecha-tren"> Filtrar por fecha de salida: </label>
+                <input type="date" id="fecha-tren">
+                <button id = "buscar-trenes"> Buscar </button>
+            </div>
+
+            <div id="trenes-contenedor"></div> <!-- Mostrar los trenes aquí -->
+        </details>
+
         </main>
         <footer class="pie">
             Guía de Bruselas - Creado por María Begara

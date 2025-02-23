@@ -45,6 +45,10 @@ h1 {
     font-size: 2em;
     margin-top: 10px;
 }
+h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
 
 /* Enlaces */
@@ -171,6 +175,7 @@ button {
     background-color: #1e86b0;
     color: white;
     border: none;
+    border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
@@ -180,10 +185,62 @@ button:hover {
     background-color: #157196;
 }
 
+
 /* Footer */
 footer {
     background-color: #525050;
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Añadido para la práctica 3 */
+/*Estilos de alquileres de bicis y consejos - DUMMYJSON*/
+#bicis-contenedor, #consejos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bici, .consejo {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    text-align: center;
+}
+
+
+.bici .precio {
+    font-weight: bold;
+    color: #1e86b0;
+    font-size: 16px;
+}
+
+
+/*Buscador por precio */
+.buscador {
+    margin: 20px 0;
+}
+
+.buscador input {
+    padding: 8px;
+    font-size: 16px;
+    width: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
 }
