@@ -108,7 +108,7 @@ img:hover {
 }
 
 
-table img {
+.imagen-tabla {
     max-width: 80%;
     height: auto;
     display: block;
