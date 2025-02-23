@@ -28,7 +28,7 @@ header {
     grid-template-rows: auto auto; /* Dos filas: una para nav y otra para el h1 */
     gap: 20px; /* Ajusta la separación entre el nav y el h1 */
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
