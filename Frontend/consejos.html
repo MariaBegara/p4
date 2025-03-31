@@ -27,18 +27,44 @@
       </header>
 
       <main>
-        <section id="consejos-viajeros">
+        
+        <section class="ContendoresConsejos">
             <h2>Consejos de otros viajeros</h2>
             <p>Aquí tienes algunos consejos útiles basados en experiencias reales.</p>
-
+      
             <button id="actualizar-consejos">Actualizar consejos</button>
-            <div id="consejos-contenedor">
+            <div id="consejos-contenedor"></div>
         </section>
-    </main>
+      
+        <!-- P4 Formulario para añadir un consejo -->
+        <section class="ContendoresConsejos">
+            <h2>¡Comparte tu consejo!</h2>
+              <form id="formulario-consejo">
+                <input type="text" id="titulo-consejo" placeholder="Título del consejo" required>
+                <input type="text" id="usuario-consejo" placeholder="Tu usuario" required>
+                <textarea id="mensaje-consejo" placeholder="Escribe tu consejo (20-300 palabras)" required></textarea>
+                <button type="button" id="enviar-consejo">Enviar</button>
+              </form>
+            <div id="contenedor-add-consejo"></div>
+        </section>
+      
+        <!-- P4 Formulario para modificar un consejo -->
+        <section class="ContendoresConsejos">
+            <h2>Modificar o eliminar tu consejo</h2>
+            <p>Si quieres modificar o eliminar un consejo que has enviado, por favor, introduce el título del consejo y tu usuario.</p>
+            <form id="formulario-modificar">
+                <input type="text" id="usuario-modificar" placeholder="Tu usuario" required>
+                <textarea id="mensaje-modificar" placeholder="Edita tu consejo (20-300 palabras)" required></textarea>
+                <button type="button" id="modificar-consejo">Modificar</button>
+                <button type="button" id="eliminar-consejo">Eliminar</button>
+            </form>
+            <div id="contenedor-modificar-consejo"></div>
+        </section>
+      </main>
     
 
       <footer class="pie">
-          Guía de Bruselas - Creado por María Begara
+        Guía de Bruselas - Creado por María Begara
       </footer>
       
   </body>

@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     const contenedorConsejos = document.getElementById("consejos-contenedor");
     const botonActualizar = document.getElementById("actualizar-consejos");
+    
+    const URL = "http://localhost:8080/api/consejos";
 
+    // GET: obtener 4 consejos aleatorios
     async function obtenerConsejos() {
         try {
-            // Llamada para obtener consejos aleatorios
-            const respuesta = await fetch("https://dummyjson.com/posts?limit=5&skip=" + Math.floor(Math.random() * 100));
-            const datos = await respuesta.json();
+            const respuesta = await fetch(URL);
+            const consejos = await respuesta.json();
 
             // Se eliminan los consejos anteriores
             contenedorConsejos.innerHTML = "";
 
-            // Recorrer los consejos y añadirlos al contenedor
-            datos.posts.forEach(post => {
+            consejos.forEach(consejo => {
                 const consejoHTML = `
-                    <div class="consejo">
-                        <h3>${post.title}</h3>
-                        <p>${post.body}</p>
+                    <div class="consejo" data-titulo="${consejo.titulo}" data-usuario="${consejo.usuario}">
+                        <h3>${consejo.titulo} (@${consejo.titulo})</h3>
+                        <p>${consejo.mensaje}</p>
                     </div>
                 `;
                 contenedorConsejos.innerHTML += consejoHTML;
@@ -33,3 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Actualizar los consejos cuando se haga clic en el botón
     botonActualizar.addEventListener("click", obtenerConsejos);
 });
+
+//<button onclick="editarConsejo('${consejo.usuario}')">Modificar</button>
+//<button onclick="eliminarConsejo('${consejo.usuario}')">Eliminar</button>
