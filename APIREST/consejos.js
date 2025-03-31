@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     async function obtenerConsejos() {
         try {
             const respuesta = await fetch(URL);
+
+            // Verificar fallo en la respuesta
+            if (!respuesta.ok) {
+                throw new Error(`Error ${respuesta.status}: ${respuesta.statusText}`);
+            }
+
+            // Convertir la respuesta a JSON
             const consejos = await respuesta.json();
 
             // Se eliminan los consejos anteriores
@@ -34,6 +41,3 @@ document.addEventListener("DOMContentLoaded", function () {
     // Actualizar los consejos cuando se haga clic en el botón
     botonActualizar.addEventListener("click", obtenerConsejos);
 });
-
-//<button onclick="editarConsejo('${consejo.usuario}')">Modificar</button>
-//<button onclick="eliminarConsejo('${consejo.usuario}')">Eliminar</button>

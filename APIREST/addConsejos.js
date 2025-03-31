@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputUsuario = document.getElementById("usuario-consejo");
     const inputMensaje = document.getElementById("mensaje-consejo");
     const inputTitulo = document.getElementById("titulo-consejo");
-    const btnEnviar = document.getElementById("enviar");
+    const btnEnviar = document.getElementById("enviar-consejo");
     const URL = "http://localhost:8080/api/consejos";
 
     // POST: añadir un nuevo consejo

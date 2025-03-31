@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const inputTituloModificar = document.getElementById("titulo-modificar");
     const inputUsuarioModificar = document.getElementById("usuario-modificar");
     const inputMensajeModificar = document.getElementById("mensaje-modificar");
     const btnModificar = document.getElementById("modificar-consejo");
@@ -7,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // PUT: modificar un consejo existente
     // DELETE: eliminar un consejo existente
+    const titulo = inputTituloModificar.value;
+    const usuario = inputUsuarioModificar.value;
+    const nuevoMensaje = inputMensajeModificar.value;
+
     async function modificarConsejo() {
 
-        const usuario = inputUsuarioModificar.value;
-        const nuevoMensaje = inputMensajeModificar.value;
 
         try {
             const respuesta = await fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
@@ -21,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (respuesta.ok) {
                 alert("Consejo modificado correctamente.");
+                inputTituloModificar.value = "";
                 inputUsuarioModificar.value = "";
                 inputMensajeModificar.value = "";
             } else {
@@ -31,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    async function eliminarConsejo(usuario) {
+
+    
+    async function eliminarConsejo() {
         
         try {
             const respuesta = await fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
@@ -40,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (respuesta.ok) {
                 alert("Consejo eliminado correctamente.");
+                inputTituloModificar.value = "";
                 inputUsuarioModificar.value = "";
                 inputMensajeModificar.value = "";
             } else {
