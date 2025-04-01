@@ -6,57 +6,66 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnEliminar = document.getElementById("eliminar-consejo");
     const URL = "http://localhost:8080/api/consejos";
 
-    // PUT: modificar un consejo existente
-    // DELETE: eliminar un consejo existente
-    const titulo = inputTituloModificar.value;
-    const usuario = inputUsuarioModificar.value;
-    const nuevoMensaje = inputMensajeModificar.value;
+    // PUT: Modificar un consejo existente
+    function modificarConsejo() {
+        const titulo = inputTituloModificar.value.trim();
+        const usuario = inputUsuarioModificar.value.trim();
+        const nuevoMensaje = inputMensajeModificar.value.trim();
 
-    async function modificarConsejo() {
-
-
-        try {
-            const respuesta = await fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ mensaje: nuevoMensaje })
-            });
-
-            if (respuesta.ok) {
-                alert("Consejo modificado correctamente.");
-                inputTituloModificar.value = "";
-                inputUsuarioModificar.value = "";
-                inputMensajeModificar.value = "";
-            } else {
-                alert("No se encontró el usuario.");
-            }
-        } catch (error) {
-            console.error("Error al modificar consejo:", error);
+        if (!titulo || !usuario || !nuevoMensaje) {
+            alert("Todos los campos son obligatorios.");
+            return;
         }
+
+        fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ mensaje: nuevoMensaje })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("No se encontró el usuario o hubo un error en la modificación.");
+            }
+            return response.json();
+        })
+        .then(() => {
+            alert("Consejo modificado correctamente.");
+            limpiarCampos();
+        })
+        .catch(error => console.error("Error al modificar consejo:", error));
     }
 
 
-    
-    async function eliminarConsejo() {
-        
-        try {
-            const respuesta = await fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
-                method: "DELETE"
-            });
+    // DELETE: Eliminar un consejo existente
+    function eliminarConsejo() {
+        const titulo = inputTituloModificar.value.trim();
+        const usuario = inputUsuarioModificar.value.trim();
 
-            if (respuesta.ok) {
-                alert("Consejo eliminado correctamente.");
-                inputTituloModificar.value = "";
-                inputUsuarioModificar.value = "";
-                inputMensajeModificar.value = "";
-            } else {
-                alert("No se encontró el usuario.");
-            }
-        } catch (error) {
-            console.error("Error al eliminar consejo:", error);
+        if (!titulo || !usuario) {
+            alert("Debes ingresar un título y un usuario para eliminar.");
+            return;
         }
+
+        fetch(`${URL}/titulo/${titulo}/usuario/${usuario}`, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("No se encontró el usuario o el consejo.");
+            }
+            return response.text();
+        })
+        .then(() => {
+            alert("Consejo eliminado correctamente.");
+            inputTituloModificar.value = "";
+            inputUsuarioModificar.value = "";
+            inputMensajeModificar.value = "";
+        })
+        .catch(error => console.error("Error al eliminar consejo:", error));
     }
+
+
 
     btnModificar.addEventListener("click", modificarConsejo);
-    btnEliminar.addEventListener("click", () => eliminarConsejo());
+    btnEliminar.addEventListener("click", eliminarConsejo);
 });

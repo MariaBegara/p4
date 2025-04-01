@@ -6,32 +6,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const URL = "http://localhost:8080/api/consejos";
 
     // POST: añadir un nuevo consejo
-    async function addConsejo() {
+    function addConsejo() {
         
         const nuevoConsejo = {
-            titulo: inputTitulo.value,
-            usuario: inputUsuario.value,
-            mensaje: inputMensaje.value
+            titulo: inputTitulo.value.trim(),
+            usuario: inputUsuario.value.trim(),
+            mensaje: inputMensaje.value.trim()
         };
 
-        try {
-            const respuesta = await fetch(URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(nuevoConsejo)
-            });
-
-            if (respuesta.ok) {
-                alert("Consejo añadido correctamente.");
-                inputTitulo.value = "";
-                inputUsuario.value = "";
-                inputMensaje.value = "";
-            } else {
-                alert("Error al enviar el consejo.");
-            }
-        } catch (error) {
-            console.error("Error al enviar consejo:", error);
+        if (!nuevoConsejo.titulo || !nuevoConsejo.usuario || !nuevoConsejo.mensaje) {
+            alert("Todos los campos son obligatorios.");
+            return;
         }
+
+        fetch(URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(nuevoConsejo)
+        })
+        .then(response =>  response.json())
+        .then(() => {
+
+            alert("Consejo añadido correctamente.");
+            // Se limpian los inputs
+            inputTitulo.value = "";
+            inputUsuario.value = "";
+            inputMensaje.value = "";
+        })
+
+        .catch(error => console.error("Error al enviar consejo:", error));
+    
     }
 
     btnEnviar.addEventListener("click", addConsejo);
